@@ -1,16 +1,17 @@
 <?php
 
-class Login extends CI_Controller{
+class Login extends MX_Controller{
     function __construct(){
         parent::__construct();
+        if($this->session->userdata('logged_in') != null){
+            redirect(base_url("admin"));
+        }
         $this->load->model('m_login');
     }
 
     function index(){
-        $data['result'] = $this->session->flashdata('result_login');
+        $data['result'] = $this->session->flashdata('loginStatus');
         $this->load->view('v_login',$data);
-        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|callback_username_check');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_password_check');
     }
 
     function act(){

@@ -18,8 +18,7 @@ class m_login extends CI_Model{
             redirect("admin");
         }
         else{
-            $data["error"]="Username atau password salah!";
-            $this->session->set_flashdata("result_login","Username atau password salah!");
+            $this->session->set_flashdata("loginStatus","Username atau password salah!");
             redirect('login');
         }
     }

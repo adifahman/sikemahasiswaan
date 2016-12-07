@@ -4,14 +4,11 @@
             parent::__construct();
         }
         
-        public function data(){
-            //return $this->db->get('bsw_beasiswa');
-            
+        public function data(){            
             $this->db->select('bsw.id_beasiswa, prf.nama_pemberi, bsw.nama_beasiswa, bsw.jenis_beasiswa');
             $this->db->from('bsw_beasiswa as bsw');
             $this->db->join('bsw_profil as prf', 'bsw.id_profil = prf.id_profil');
             $ambildata = $this->db->get();
-            //jika data ada (lebih dari 0)
             if ($ambildata->num_rows() > 0 ) {
                 foreach ($ambildata->result() as $data) {
                     $hasil[] = $data;
