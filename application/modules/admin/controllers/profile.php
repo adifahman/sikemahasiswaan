@@ -36,14 +36,10 @@ class Profile extends MX_Controller{
     }
     
     function update(){
-//        if($this->input->post('submit')){ //kondisi ketika ada submitan
-//           $this->m_profile->update($id);
-//        }
-//        $data['hasil']=$this->m_profile->getEdit($id); //dapetin id transaksi
         $this->m_profile->update();
     }
     
-    function delete($id){ //fungsi delete
-        $this->m_profile->delete($id); //ngacir ke fungsi delTransaksi
+    function delete($id){
+        $this->m_profile->delete($id);
     }
 }
