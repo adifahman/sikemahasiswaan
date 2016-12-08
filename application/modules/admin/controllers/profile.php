@@ -8,10 +8,12 @@ class Profile extends MX_Controller{
             redirect(base_url("login"));
         }
         $this->load->model('m_profile');
+        
     }
 
     function index(){
         $data['title']      = "Profil Perusahaan";
+        $data['page']       = 'prf';
         $table['dataTable']  = $this->m_profile->data()->result();
         
         $this->load->view('v_header', $data);

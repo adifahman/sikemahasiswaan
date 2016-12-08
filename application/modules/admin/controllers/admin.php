@@ -10,7 +10,9 @@ class Admin extends MX_Controller{
     }
 
     function index(){
-        $data['title'] = "Dashboard";
+        $data['title']      = "Dashboard";
+        $data['page']       = 'adm';
+        
         $this->load->view('v_header', $data);
         $this->load->view('v_navigation');
         $this->load->view('v_admin');

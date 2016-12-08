@@ -15,20 +15,21 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
-                <li><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-                <li class="active treeview">
+                <li class="<?php if($page == 'adm'){echo 'active';} ?>"><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+                <li class="<?php if($page == 'bsw'){echo 'active';} ?> treeview">
                     <a href="#">
                         <i class="fa fa-graduation-cap"></i> <span>Beasiswa</span>
-                            <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
                     </a>
+                    
                     <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url('admin/beasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Beasiswa</a></li>
-                    <li><a href="<?php echo base_url('admin/detailbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Detail Beasiswa</a></li>
+                        <li class="<?php if($page == 'bsw'){echo 'active';} ?>"><a href="<?php echo base_url('admin/beasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Beasiswa</a></li>
+                        <li><a href="<?php echo base_url('admin/detailbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Detail Beasiswa</a></li>
                     </ul>
                 </li>      
-                <li class="active treeview">
+                <li class="treeview <?php if($page == 'prf'){echo 'active';} ?>">
                     <a href="#">
                         <i class="fa fa-building"></i> <span>Pemberi Beasiswa</span>
                             <span class="pull-right-container">
@@ -36,7 +37,7 @@
                     </span>
                     </a>
                     <ul class="treeview-menu">
-                    <li><a href="<?php echo base_url('admin/profile'); ?>"><i class="fa fa-user"></i> Profil</a></li>
+                        <li class="<?php if($page == 'prf'){echo 'active';} ?>"><a href="<?php echo base_url('admin/profile'); ?>"><i class="fa fa-user"></i> Profil</a></li>
                     </ul>
                 </li>      
             </ul>
