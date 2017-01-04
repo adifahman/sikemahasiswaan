@@ -3,7 +3,7 @@
             <div class="pull-right hidden-xs">
                 <b>Version</b> 0.2
             </div>
-            <strong>Copyright &copy; 2016 Adi Fahman.</strong> All rights
+            <strong>Copyright &copy; 2017 A.FM</strong> All rights
             reserved.
         </footer>
         <!-- Add the sidebar's background. This div must be placed
