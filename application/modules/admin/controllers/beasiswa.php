@@ -8,14 +8,17 @@ class Beasiswa extends MX_Controller{
             redirect(base_url("login"));
         }
         $this->load->model('m_beasiswa');
-        
     }
 
     function index(){
-        $data['title']      = "Beasiswa";
+        $data['title']      = "Detail Beasiswa";
         $data['page']       = 'bsw';
         $data['list']       = $this->getList();
-        $table['dataTable'] = $this->m_beasiswa->data();
+        if($this->session->userdata("updated")==1){
+            $table['dataTable'] = $this->m_beasiswa->dataUpdated();
+        }else{
+            $table['dataTable'] = $this->m_beasiswa->data();
+        }
         
         $this->load->view('v_header', $data);
         $this->load->view('v_navigation');

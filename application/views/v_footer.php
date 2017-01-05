@@ -12,7 +12,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <script src="<?php echo base_url('assets'); ?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
+    
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
@@ -20,13 +20,24 @@
     <script src="<?php echo base_url('assets'); ?>/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/datatables/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/daterangepicker/daterangepicker.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/select2/select2.full.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/dist/js/app.min.js"></script>
     <script>
         $(function () {
-            $("#viewTable").DataTable();
+            $("#viewTable").DataTable({
+                "aaSorting": []
+            });
             $(".select2").select2();
+            $('#date').daterangepicker({
+                "minDate": new Date(),
+                locale: {
+                    format: 'DD/MM/YYYY'
+                }
+            });
         });
+        
     </script>
 </body>
 </html>

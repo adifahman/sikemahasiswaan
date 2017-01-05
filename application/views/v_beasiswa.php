@@ -38,6 +38,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
+                                    if (is_array($dataTable) || is_object($dataTable)){
                                         foreach ($dataTable as $dt):
                                     ?>
                                         <tr>
@@ -52,6 +53,7 @@
                                         </tr>
                                     <?php
                                         endforeach;
+                                    }
                                     ?>
                                 </tbody>
                             </table>
@@ -83,7 +85,6 @@
                         
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">Pemberi Beasiswa</label>
-                            <!--<input name="idP" class="form-control" id="recipient-name" required autocomplete="off" autofocus>-->
                             <?php echo form_dropdown('idP', $list, '', 'class="form-control select2" style="width: 100%;"'); ?>
                         </div>
 
@@ -156,7 +157,6 @@
                 dataType: "JSON",
                 success: function(data){
                     $('[name="eID"]').val(data.id_beasiswa);
-//                    $('[name="eIDP"]').val(data.id_profil);
                     $('[name="eIDP"]').val(data.id_profil).change();
                     $('[name="eNama"]').val(data.nama_beasiswa);
                     $('[name="eJenis"]').val(data.jenis_beasiswa);

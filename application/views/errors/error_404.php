@@ -67,7 +67,7 @@
 
                         <p>
                             We could not find the page you were looking for.
-                            Meanwhile, you may <a href="<?php echo base_url('assets'); ?>/">return to dashboard</a>.
+                            Meanwhile, you may <a href="<?php echo base_url(''); ?>">home</a>.
                         </p>
                         <div class="input-group">
                             <input type="text" name="search" class="form-control" placeholder="404 Error" disabled="">

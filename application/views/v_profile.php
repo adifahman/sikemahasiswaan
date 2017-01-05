@@ -40,6 +40,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
+                                    if (is_array($dataTable) || is_object($dataTable)){
                                         foreach ($dataTable as $dt):
                                     ?>
                                         <tr>
@@ -56,6 +57,7 @@
                                         </tr>
                                     <?php
                                         endforeach;
+                                    }
                                     ?>
                                 </tbody>
                             </table>

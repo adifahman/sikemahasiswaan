@@ -16,7 +16,7 @@
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if($page == 'adm'){echo 'active';} ?>"><a href="<?php echo base_url('admin'); ?>"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-                <li class="<?php if($page == 'bsw'){echo 'active';} ?> treeview">
+                <li class="<?php if($page == 'bsw' || $page == 'dbs'){echo 'active';} ?> treeview">
                     <a href="#">
                         <i class="fa fa-graduation-cap"></i> <span>Beasiswa</span>
                         <span class="pull-right-container">
@@ -26,7 +26,7 @@
                     
                     <ul class="treeview-menu">
                         <li class="<?php if($page == 'bsw'){echo 'active';} ?>"><a href="<?php echo base_url('admin/beasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Beasiswa</a></li>
-                        <li><a href="<?php echo base_url('admin/detailbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Detail Beasiswa</a></li>
+                        <li class="<?php if($page == 'dbs'){echo 'active';} ?>"><a href="<?php echo base_url('admin/detailbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Detail Beasiswa</a></li>
                     </ul>
                 </li>      
                 <li class="treeview <?php if($page == 'prf'){echo 'active';} ?>">
