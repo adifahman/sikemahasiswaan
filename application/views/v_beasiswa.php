@@ -79,23 +79,23 @@
                 <div class="modal-body">
                     <form action="<?php echo base_url('admin/beasiswa/input');?>" method="post">                                
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">ID Beasiswa</label>
+                            <label for="id" class="control-label">ID Beasiswa</label>
                             <input name="id" class="form-control" id="iID" required readonly>
                         </div>
                         
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Pemberi Beasiswa</label>
-                            <?php echo form_dropdown('idP', $list, '', 'class="form-control select2" style="width: 100%;"'); ?>
+                            <label for="idP" class="control-label">Pemberi Beasiswa</label>
+                            <?php echo form_dropdown('idP', $list, '', 'id="idP" class="form-control select2" style="width: 100%;"'); ?>
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Nama Beasiswa</label>
-                            <input name="nama" class="form-control" id="recipient-name" required autocomplete="off">
+                            <label for="nama" class="control-label">Nama Beasiswa</label>
+                            <input name="nama" class="form-control" id="nama" required autocomplete="off">
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Jenis Beasiswa</label>
-                            <input name="jenis"class="form-control" id="recipient-name" required autocomplete="off">
+                            <label for="jenis" class="control-label">Jenis Beasiswa</label>
+                            <input name="jenis"class="form-control" id="jenis" required autocomplete="off">
                         </div>
 
                         <div class="modal-footer">
@@ -119,24 +119,23 @@
                 <div class="modal-body">
                     <form action="<?php echo base_url('admin/beasiswa/update');?>" method="post">                                
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">ID Beasiswa</label>
-                            <input name="eID" class="form-control" id="recipient-name" required readonly>
+                            <label for="eID" class="control-label">ID Beasiswa</label>
+                            <input name="eID" class="form-control" id="eID" required readonly>
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">ID Pemberi</label>
-                            <?php echo form_dropdown('eIDP', $list, '', 'class="form-control select2" style="width: 100%;"'); ?>
-                            <!--<input name="eIDP" class="form-control" id="recipient-name" required autocomplete="off" autofocus>-->
+                            <label for="eIDP" class="control-label">ID Pemberi</label>
+                            <?php echo form_dropdown('eIDP', $list, '', 'id="eIDP" class="form-control select2" style="width: 100%;"'); ?>
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Nama Beasiswa</label>
-                            <input name="eNama" class="form-control" id="recipient-name" required autocomplete="off">
+                            <label for="eNama" class="control-label">Nama Beasiswa</label>
+                            <input name="eNama" class="form-control" id="eNama" required autocomplete="off">
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Jenis Beasiswa</label>
-                            <input name="eJenis"class="form-control" id="recipient-name" required autocomplete="off">
+                            <label for="eJenis" class="control-label">Jenis Beasiswa</label>
+                            <input name="eJenis"class="form-control" id="eJenis" required autocomplete="off">
                         </div>
 
                         <div class="modal-footer">

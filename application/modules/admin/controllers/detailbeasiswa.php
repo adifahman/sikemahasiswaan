@@ -14,11 +14,6 @@ class Detailbeasiswa extends MX_Controller{
         $data['title']      = "Detail Beasiswa";
         $data['page']       = 'dbs';
         $data['list']       = $this->getList();
-//        if($this->session->userdata("updated")==1){
-//            $table['dataTable'] = $this->m_beasiswa->dataUpdated();
-//        }else{
-//            $table['dataTable'] = $this->m_beasiswa->data();
-//        }
         
         $this->load->view('v_header', $data);
         $this->load->view('v_navigation');
@@ -26,27 +21,15 @@ class Detailbeasiswa extends MX_Controller{
         $this->load->view('v_footer');
     }
     
-    function getID(){
-        $id = $this->m_beasiswa->getID();
-        echo "{\"uid\":\"".$id."\"}";
-    }
-            
-    function input(){
-        $this->input->post('submit');
-        $this->m_beasiswa->input();
-    }
-    
-    function edit($id){
-        $data = $this->m_beasiswa->getEdit($id);
-        echo json_encode($data);
-    }
-    
-    function update(){
-        $this->m_beasiswa->update();
-    }
-    
-    function delete($id){
-        $this->m_beasiswa->delete($id);
+    function formDetBeasiswa($idB){
+        $this->db->select_max('periode');
+        $this->db->where('id_beasiswa',$idB);
+        $result = $this->db->get('bsw_detbeasiswa')->row();  
+        
+        $data['periode'] = $result->periode+1;
+        $data['idB'] = $idB;
+        
+        $this->load->view('ajax/a_detBeasiswa',$data);
     }
     
     function getList(){
@@ -55,5 +38,10 @@ class Detailbeasiswa extends MX_Controller{
             $list[$row->id_beasiswa] = $row->nama_beasiswa;
         }
         return $list;
+    }
+    
+    function inputPeriod(){
+        $this->input->post('submit');
+        $this->m_detbeasiswa->inputPeriod();
     }
 }

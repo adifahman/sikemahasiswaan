@@ -37,40 +37,6 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div id="result">
-                                        <form class="form-horizontal">
-                                            <div class="box-body">
-                                                <div class="form-group">
-                                                    <label for="per" class="col-sm-3 control-label">Periode</label>
-                                                    <div class="col-sm-3">
-                                                        <input class="form-control" id="per" placeholder="Periode" type="text">
-                                                    </div>
-                                                    <label for="thn" class="col-sm-2 control-label">Tahun</label>
-                                                    <div class="col-sm-4">
-                                                        <input class="form-control" id="thn" placeholder="Tahun" type="text">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="per" class="col-sm-3 control-label">Tgl. Pendaftaran</label>
-                                                    <div class="col-sm-9">
-                                                        <input type="text" class="form-control pull-right" id="date">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="col-sm-offset-2 col-sm-10">
-                                                        <div class="checkbox">
-                                                            <label>
-                                                                <input type="checkbox"> Simpan sebagai draft
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /.box-body -->
-                                            <div class="box-footer">
-                                              <button type="submit" class="btn btn-info pull-right">Sign in</button>
-                                            </div>
-                                            <!-- /.box-footer -->
-                                        </form>
                                     </div>
                                   <!-- /.form-group -->
                                 </div>
@@ -89,28 +55,23 @@
 
     <script type="text/javascript"> 
         $(document).ready(function(){
-            function search(){
-                var strcari = $("#idB").val();
-                if (strcari != ""){
+            function getForm(){
+                var idB = $("#idB").val();
+                if (idB != "1"){
                     $("#result").html("<i class='fa fa-refresh fa-spin'></i>");
                     $.ajax({
                         type: "GET",
-                        url: "cari_npm.php",
-                        data:"q="+strcari,
+                        url: "<?php echo base_url('admin/detailbeasiswa/formDetBeasiswa');?>/" + idB,
                         success: function(data){
                             $('#result').html(data);
-                            var strstat = $("#txtstat").val(); 
-                            if(strstat == "Belum mencoblos"){
-                                    $(".btn-aktif").show();
-                            }else{
-                                    $(".btn-aktif").hide();
-                            }
                         }
                     });
-                } 
+                }else{
+                    $("#result").html("");
+                }
             }
             $("#idB").on("change", function(){
-                search();
+                getForm();
             });
 	});
     </script>
