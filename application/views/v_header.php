@@ -18,7 +18,7 @@
     <script src="<?php echo base_url('assets'); ?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition fixed skin-blue sidebar-mini">
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -40,15 +40,8 @@
 
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="<?php echo base_url('assets'); ?>/dist/img/user.png" class="user-image" alt="User Image">
-                                <span class="hidden-xs">Alexander Pierce</span>
-                            </a>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
                         <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                            <a href="logout"><i class="fa fa-sign-out"></i>Sign Out</a>
                         </li>
                     </ul>
                 </div>

@@ -1,5 +1,3 @@
-    
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
@@ -15,9 +13,7 @@
 
         <!-- Main content -->
         <section class="content">
-            <!-- Main row -->
             <div class="row">
-                <!-- Left col -->
                 <section class="col-xs-12">
                     <div class="box">
                         <div class="box-header with-border">
@@ -30,29 +26,23 @@
                                         <label>Pilih Beasiswa</label>
                                         <?php echo form_dropdown('idB', $list, '', 'id="idB" class="form-control select2" style="width: 100%;"'); ?>
                                     </div>
-                                  <!-- /.form-group -->
                                 </div>
-                            <!-- /.col -->
-                            </div>
-                            <div class="row">
                                 <div class="col-md-6">
-                                    <div id="result">
+                                    <div id="addPeriod">
+                                        
                                     </div>
-                                  <!-- /.form-group -->
                                 </div>
-                            <!-- /.col -->
+                            </div>
+                            <div id="detBeasiswa">
+                                
                             </div>
                         </div>
                     </div>
                 </section>
-                <!-- right col -->
             </div>
-            <!-- /.row (main row) -->
         </section>
-        <!-- /.content -->
     </div>
-    <!-- /.content-wrapper -->
-
+    
     <script type="text/javascript"> 
         $(document).ready(function(){
             function getForm(){
@@ -61,17 +51,27 @@
                     $("#result").html("<i class='fa fa-refresh fa-spin'></i>");
                     $.ajax({
                         type: "GET",
+                        url: "<?php echo base_url('admin/detailbeasiswa/formAddPeriod');?>/" + idB,
+                        success: function(data){
+                            $('#addPeriod').html(data);
+                        }
+                    });
+                    $.ajax({
+                        type: "GET",
                         url: "<?php echo base_url('admin/detailbeasiswa/formDetBeasiswa');?>/" + idB,
                         success: function(data){
-                            $('#result').html(data);
+                            $('#detBeasiswa').html(data);
                         }
                     });
                 }else{
-                    $("#result").html("");
+                    $("#addPeriod").html("");
+                    $("#detBeasiswa").html("");
                 }
             }
+            
             $("#idB").on("change", function(){
                 getForm();
             });
+            
 	});
     </script>

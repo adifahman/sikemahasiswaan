@@ -12,7 +12,9 @@ class m_login extends CI_Model{
         if(count($q_check_login->result()) > 0){
             foreach($q_check_login->result() as $qad){
                 $sess_data['logged_in'] = 'yesGetMeLoginBaby';
-                $sess_data['username'] = $qad->username;
+                $sess_data['username']  = $qad->username;
+                $sess_data['name']      = $qad->name;
+                $sess_data['privilege'] = $qad->privilege;
                 $this->session->set_userdata($sess_data);
             }
             redirect("admin");

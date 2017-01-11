@@ -21,17 +21,25 @@ class Detailbeasiswa extends MX_Controller{
         $this->load->view('v_footer');
     }
     
-    function formDetBeasiswa($idB){
-        $this->db->select_max('periode');
-        $this->db->where('id_beasiswa',$idB);
-        $result = $this->db->get('bsw_detbeasiswa')->row();  
+    function formAddPeriod($idB){
+        $data = $this->m_detbeasiswa->formPeriod($idB);
         
-        $data['periode'] = $result->periode+1;
-        $data['idB'] = $idB;
-        
-        $this->load->view('ajax/a_detBeasiswa',$data);
+        $this->load->view('ajax/a_formAddPeriod',$data);
     }
     
+    function formDetBeasiswa($idB){
+        $data['count'] = $this->m_detbeasiswa->totalPeriod($idB);
+        
+        $this->load->view('ajax/a_formDetBeasiswa',$data);
+    }
+    
+    function form(){
+        $idB = $this->input->post('idB'); 
+        $per = $this->input->post('per');
+        $data['data'] = $this->m_detbeasiswa->form();
+        $this->load->view('ajax/a_form',$data);
+    }
+            
     function getList(){
         $list[1] = "";
         foreach ($this->m_detbeasiswa->getList()->result() as $row){

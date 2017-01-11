@@ -21,7 +21,6 @@
             $ambildata = $this->db->query('SELECT bsw.id_beasiswa, prf.nama_pemberi, bsw.nama_beasiswa, bsw.jenis_beasiswa '
                                         . 'FROM bsw_beasiswa as bsw JOIN bsw_profil as prf ON bsw.id_profil = prf.id_profil '
                                         . 'ORDER BY CASE WHEN updated_at = (SELECT MAX(updated_at) FROM bsw_beasiswa) THEN 1 ELSE 2 END, id_beasiswa');
-//            $this->db->get();
             if ($ambildata->num_rows() > 0 ) {
                 foreach ($ambildata->result() as $data) {
                     $hasil[] = $data;
