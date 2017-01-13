@@ -40,6 +40,19 @@
                         <li class="<?php if($page == 'dbs'){echo 'active';} ?>"><a href="<?php echo base_url('admin/detailbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Detail Beasiswa</a></li>
                     </ul>
                 </li>  
+                <li class="<?php if($page == 'bsw' || $page == 'dbs'){echo 'active';} ?> treeview">
+                    <a href="#">
+                        <i class="fa fa-graduation-cap"></i> <span>Laporan</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    
+                    <ul class="treeview-menu">
+                        <li class="<?php if($page == 'bsw'){echo 'active';} ?>"><a href="<?php echo base_url(''); ?>"><i class="fa fa-graduation-cap"></i> Rekap Beasiswa</a></li>
+                        <li class="<?php if($page == 'dbs'){echo 'active';} ?>"><a href="<?php echo base_url(''); ?>"><i class="fa fa-graduation-cap"></i> Rekap Penerima Beasiswa</a></li>
+                    </ul>
+                </li>  
             </ul>
         </section>
         <!-- /.sidebar -->

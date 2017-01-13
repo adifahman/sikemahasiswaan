@@ -27,16 +27,9 @@
     <script src="<?php echo base_url('assets'); ?>/dist/js/app.min.js"></script>
     <script>
         $(function () {
-            $("#viewTable").DataTable({
-                "aaSorting": []
-            });
-            $(".select2").select2();
-            $('#date').daterangepicker({
-                "minDate": new Date(),
-                locale: {
-                    format: 'DD/MM/YYYY'
-                }
-            });
+            $("#tableAvailable").DataTable();
+            $("#tableAll").DataTable();
+            $("#tableFinished").DataTable();
         });
     </script>
 </body>

@@ -52,4 +52,9 @@ class Detailbeasiswa extends MX_Controller{
         $this->input->post('submit');
         $this->m_detbeasiswa->inputPeriod();
     }
+    
+    function inputBeasiswa(){
+        $this->input->post('submit');
+        $this->m_detbeasiswa->inputBeasiswa();
+    }
 }

@@ -30,7 +30,7 @@
                                                             <div class="form-group">
                                                                 <label for="jml" class="col-sm-3 control-label">Jumlah Penerima</label>
                                                                 <div class="col-sm-4">
-                                                                    <input class="form-control" id="jml" name="jml" placeholder="Jumlah Penerima" type="text" required autocomplete="off" pattern="[0-9]{1,3}">
+                                                                    <input class="form-control" id="jml" name="jml" placeholder="Jumlah Penerima" type="text" required autocomplete="off" pattern="[0-9]{1,3}" required>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">

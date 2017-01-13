@@ -12,14 +12,13 @@
 
                 <div class="tab-content">
                     <div class="tab-pane active" id="p1">
-                        <form class="form-horizontal" action="<?php echo base_url('admin/detailbeasiswa/inputPeriod');?>" method="post">
+                        <form class="form-horizontal" action="<?php echo base_url('admin/detailbeasiswa/inputBeasiswa');?>" method="post">
                             <div class="row">
                                 <div id="formDet">
-                                
                                 </div>
                             </div>
                             <div class="box-footer">
-                                <button type="submit" class="btn btn-info pull-right">Tambah Periode</button>
+                                <button type="submit" class="btn btn-info pull-right">Update beasiswa dan publikasikan</button>
                             </div>
                         </form>
                     </div>
@@ -35,7 +34,7 @@
         function getFormDetail(per){
             var idB = $("#idB").val();
             
-            $("#formDet").html("<i class='fa fa-refresh fa-spin'></i>");
+            $("#formDet").html("<div class='col-md-6'><i class='fa fa-refresh fa-spin'></i></div>");
             $.ajax({
                 type: "POST",
                 data: {
@@ -45,6 +44,8 @@
                 url: "<?php echo base_url('admin/detailbeasiswa/form');?>/",
                 success: function(data){
                     $('#formDet').html(data);
+                    $('#iIDbsw').val(idB);
+                    $('#iPb').val(per);
                 }
             });   
         }

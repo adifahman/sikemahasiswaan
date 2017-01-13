@@ -4,14 +4,14 @@
         function __construct(){
             parent::__construct();
             if($this->session->userdata('logged_in') != null){
-                redirect(base_url("admin"));
+                redirect(base_url("mahasiswa"));
             }
-            $this->load->model('m_login');
+            $this->load->model('mahasiswa/m_login');
         }
 
         function index(){
             $data['result'] = $this->session->flashdata('loginStatus');
-            $this->load->view('v_login',$data);
+            $this->load->view('mahasiswa/v_login',$data);
         }
 
         function act(){
