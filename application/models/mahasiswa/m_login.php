@@ -11,10 +11,10 @@
             $q_check_login = $this->db->get_where('m_mahasiswa', $check);
             if(count($q_check_login->result()) > 0){
                 foreach($q_check_login->result() as $qad){
-                    $sess_data['logged_in'] = 'mahasiswa';
-                    $sess_data['username']  = $qad->npm;
-                    $sess_data['name']      = $qad->nama;
-                    $sess_data['jurusan']   = $qad->jurusan;
+                    $sess_data['logged_in']     = 'mahasiswa';
+                    $sess_data['npm']           = $qad->npm;
+                    $sess_data['name']          = $qad->nama;
+                    $sess_data['angkatan']      = $qad->angkatan;
                     $this->session->set_userdata($sess_data);
                 }
                 redirect("mahasiswa");

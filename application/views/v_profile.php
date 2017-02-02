@@ -81,7 +81,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <form action="<?php echo base_url('admin/profile/input');?>" method="post">                                
+                    <form action="<?php echo base_url('admin/profile/input');?>" method="post">
                         <div class="form-group">
                             <label for="recipient-name" class="control-label">ID Profil</label>
                             <input name="id" class="form-control" id="iID" required readonly>

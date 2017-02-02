@@ -30,6 +30,19 @@
             $("#viewTable").DataTable({
                 "aaSorting": []
             });
+            $("#viewTableCheck").DataTable({
+                "lengthChange": false,
+                "paging": false,
+                "bScrollInfinite": true,
+                "bScrollCollapse": true,
+                "sScrollY": "200px",
+                "aaSorting": [],
+                "columnDefs": [{
+                    "targets": 0,
+                    "width": "0px",
+                    "orderable": false
+                }]
+            });
             $(".select2").select2();
             $('#date').daterangepicker({
                 "minDate": new Date(),

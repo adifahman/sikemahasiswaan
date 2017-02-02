@@ -17,6 +17,7 @@
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="<?php if($page == 'adm'){echo 'active';} ?>"><a href="<?php echo base_url('mahasiswa'); ?>"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
                 <li class="<?php if($page == 'bsw'){echo 'active';} ?>"><a href="<?php echo base_url('mahasiswa/beasiswa'); ?>"><i class="fa fa-graduation-cap"></i> <span>Lihat Beasiswa</span></a></li>
+                <li class="<?php if($page == 'dft'){echo 'active';} ?>"><a href="<?php echo base_url('mahasiswa/daftarbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> <span>Daftar Beasiswa</span></a></li>
                 <li class="treeview <?php if($page == 'prf'){echo 'active';} ?>">
                     <a href="#">
                         <i class="fa fa-building"></i> <span>Pemberi Beasiswa</span>

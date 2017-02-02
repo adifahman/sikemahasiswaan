@@ -27,7 +27,7 @@
                         <li class="<?php if($page == 'prf'){echo 'active';} ?>"><a href="<?php echo base_url('admin/profile'); ?>"><i class="fa fa-user"></i> Profil</a></li>
                     </ul>
                 </li>  
-                <li class="<?php if($page == 'bsw' || $page == 'dbs'){echo 'active';} ?> treeview">
+                <li class="<?php if($page == 'bsw' || $page == 'dbs' || $page == 'dft'){echo 'active';} ?> treeview">
                     <a href="#">
                         <i class="fa fa-graduation-cap"></i> <span>Beasiswa</span>
                         <span class="pull-right-container">
@@ -38,9 +38,10 @@
                     <ul class="treeview-menu">
                         <li class="<?php if($page == 'bsw'){echo 'active';} ?>"><a href="<?php echo base_url('admin/beasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Beasiswa</a></li>
                         <li class="<?php if($page == 'dbs'){echo 'active';} ?>"><a href="<?php echo base_url('admin/detailbeasiswa'); ?>"><i class="fa fa-graduation-cap"></i> Detail Beasiswa</a></li>
+                        <li class="<?php if($page == 'dft'){echo 'active';} ?>"><a href="<?php echo base_url('admin/pendaftar'); ?>"><i class="fa fa-graduation-cap"></i> Pendaftar Beasiswa</a></li>
                     </ul>
                 </li>  
-                <li class="<?php if($page == 'bsw' || $page == 'dbs'){echo 'active';} ?> treeview">
+<!--                <li class="<?php if($page == 'bsw' || $page == 'dbs'){echo 'active';} ?> treeview">
                     <a href="#">
                         <i class="fa fa-graduation-cap"></i> <span>Laporan</span>
                         <span class="pull-right-container">
@@ -52,7 +53,7 @@
                         <li class="<?php if($page == 'bsw'){echo 'active';} ?>"><a href="<?php echo base_url(''); ?>"><i class="fa fa-graduation-cap"></i> Rekap Beasiswa</a></li>
                         <li class="<?php if($page == 'dbs'){echo 'active';} ?>"><a href="<?php echo base_url(''); ?>"><i class="fa fa-graduation-cap"></i> Rekap Penerima Beasiswa</a></li>
                     </ul>
-                </li>  
+                </li>  -->
             </ul>
         </section>
         <!-- /.sidebar -->

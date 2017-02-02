@@ -36,35 +36,37 @@
                                 </div>
                                 <div id="collapseOne" class="panel-collapse collapse in">
                                     <div class="box-body">
-                                        <div class="box-body">
-                                            <table id="tableAvailable" class="table table-bordered table-striped">
-                                                <thead>
+                                        <table id="tableAvailable" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Pemberi Beasiswa</th>
+                                                    <th>Nama Beasiswa</th>
+                                                    <th>Periode</th>
+                                                    <th>Jenis Beasiswa</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                if (is_array($dataAvailable) || is_object($dataAvailable)){
+                                                    foreach ($dataAvailable as $dtAvailable):
+                                                ?>
                                                     <tr>
-                                                        <th>Pemberi Beasiswa</th>
-                                                        <th>Nama Beasiswa</th>
-                                                        <th>Periode</th>
-                                                        <th>Jenis Beasiswa</th>
-                                                        <th>Action</th>
+                                                        <td> <?php echo $dtAvailable->nama_pemberi;?></td>
+                                                        <td> <?php echo $dtAvailable->nama_beasiswa; ?> </td>
+                                                        <td> <?php echo $dtAvailable->periode; ?> </td>
+                                                        <td> <?php echo $dtAvailable->jenis_beasiswa; ?> </td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-small btn-default" title="Detail Beasiswa" onclick="detailB(<?php echo '\''.$dtAvailable->id_beasiswa.'\',\''.$dtAvailable->periode.'\'';?>)">Detail Beasiswa</button>
+                                                            <button type="button" class="btn btn-small btn-primary" title="Daftar Beasiswa" onclick="detailB(<?php echo '\''.$dtAvailable->id_beasiswa.'\',\''.$dtAvailable->periode.'\'';?>)" <?php echo ($dtAvailable->npm != NULL ? 'disabled title="Anda telah mendaftar beasiswa ini."' : ''); ?>>Daftar Beasiswa</button>
+                                                        </td>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Misc</td>
-                                                        <td>PSP browser</td>
-                                                        <td>PSP</td>
-                                                        <td>-</td>
-                                                        <td>-</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Other browsers</td>
-                                                        <td>All others</td>
-                                                        <td>-</td>
-                                                        <td>-</td>
-                                                        <td>-</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                <?php
+                                                    endforeach;
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -89,20 +91,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Misc</td>
-                                                    <td>PSP browser</td>
-                                                    <td>PSP</td>
-                                                    <td>PSP</td>
-                                                    <td>-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Other browsers</td>
-                                                    <td>Other browsers</td>
-                                                    <td>All others</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                </tr>
+                                                <?php
+                                                if (is_array($dataAll) || is_object($dataAll)){
+                                                    foreach ($dataAll as $dtAll):
+                                                ?>
+                                                    <tr>
+                                                        <td> <?php echo $dtAll->nama_pemberi;?></td>
+                                                        <td> <?php echo $dtAll->nama_beasiswa; ?> </td>
+                                                        <td> <?php echo $dtAll->periode; ?> </td>
+                                                        <td> <?php echo $dtAll->jenis_beasiswa; ?> </td>
+                                                        <td> 
+                                                            <button type="button" class="btn btn-small btn-default" title="Detail Beasiswa" onclick="detailB(<?php echo '\''.$dtAll->id_beasiswa.'\',\''.$dtAll->periode.'\'';?>)">Detail Beasiswa</button>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    endforeach;
+                                                }
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -129,20 +134,24 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>Misc</td>
-                                                    <td>PSP browser</td>
-                                                    <td>PSP</td>
-                                                    <td>PSP</td>
-                                                    <td>-</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Other browsers</td>
-                                                    <td>All others</td>
-                                                    <td>All others</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                </tr>
+                                                <?php
+                                                if (is_array($dataFinished) || is_object($dataFinished)){
+                                                    foreach ($dataFinished as $dtFinished):
+                                                ?>
+                                                    <tr>
+                                                        <td> <?php echo $dtFinished->nama_pemberi;?></td>
+                                                        <td> <?php echo $dtFinished->nama_beasiswa; ?> </td>
+                                                        <td> <?php echo $dtFinished->periode; ?> </td>
+                                                        <td> <?php echo $dtFinished->jenis_beasiswa; ?> </td>
+                                                        <td> 
+                                                            <button type="button" class="btn btn-small btn-default" title="Detail Beasiswa" onclick="detailB(<?php echo '\''.$dtFinished->id_beasiswa.'\',\''.$dtFinished->periode.'\'';?>)">Detail Beasiswa</button>
+                                                            <button type="button" class="btn btn-small btn-default" title="Penerima Beasiswa" onclick="detailB(<?php echo '\''.$dtFinished->id_beasiswa.'\',\''.$dtFinished->periode.'\'';?>)">Penerima Beasiswa</button>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                    endforeach;
+                                                }
+                                                ?>
                                             </tbody>
                                         </table>
                                     </div>
@@ -161,3 +170,28 @@
 </div>
 <!-- /.content-wrapper -->
 
+<div class="modal fade" id="viewModal" role="dialog" aria-labelledby="insertModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="modalData"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function detailB(idB,per){
+        $("#formDet").html("<div class='col-md-6'><i class='fa fa-refresh fa-spin'></i></div>");
+        $.ajax({
+            type: "POST",
+            data: {
+                idB: idB,
+                per: per
+            },
+            url: "<?php echo base_url('mahasiswa/beasiswa/view');?>/",
+            success: function(data){
+                $('#modalData').html(data);
+                $('#viewModal').modal('show');
+            }
+        });   
+    }
+</script>

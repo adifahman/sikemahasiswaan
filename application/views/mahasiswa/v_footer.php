@@ -20,16 +20,45 @@
     <script src="<?php echo base_url('assets'); ?>/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/datatables/dataTables.bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <script src="<?php echo base_url('assets'); ?>/plugins/daterangepicker/moment.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/daterangepicker/daterangepicker.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/slimScroll/jquery.slimscroll.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/plugins/select2/select2.full.min.js"></script>
     <script src="<?php echo base_url('assets'); ?>/dist/js/app.min.js"></script>
     <script>
+        $(".select2").select2();
+        
         $(function () {
-            $("#tableAvailable").DataTable();
-            $("#tableAll").DataTable();
-            $("#tableFinished").DataTable();
+            $("#tableAvailable").DataTable({
+                bAutoWidth: false , 
+                aoColumns : [
+                  { sWidth: '30%' },
+                  { sWidth: '30%' },
+                  { sWidth: '5%'  },
+                  { sWidth: '13%' },
+                  { sWidth: '21%' }
+                ]
+            });
+            $("#tableAll").DataTable({
+                bAutoWidth: false , 
+                aoColumns : [
+                  { sWidth: '30%' },
+                  { sWidth: '30%' },
+                  { sWidth: '5%'  },
+                  { sWidth: '13%' },
+                  { sWidth: '21%' }
+                ]
+            });
+            $("#tableFinished").DataTable({
+                bAutoWidth: false , 
+                aoColumns : [
+                  { sWidth: '30%' },
+                  { sWidth: '30%' },
+                  { sWidth: '5%'  },
+                  { sWidth: '12%' },
+                  { sWidth: '23%' }
+                ]
+            });
         });
     </script>
 </body>
