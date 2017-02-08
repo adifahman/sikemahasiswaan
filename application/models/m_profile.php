@@ -54,7 +54,7 @@
             $telp       = $this->input->post('eEmail');
             $email      = $this->input->post('eWebsite');
             $website    = $this->input->post('eTelp');           
-            $data= [
+            $data = [
                 'nama_pemberi'      =>$nama,
                 'alamat'            =>$alamat,
                 'no_telp'           =>$telp,

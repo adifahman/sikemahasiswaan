@@ -20,7 +20,7 @@
             <section class="col-xs-12">
                 <div class="box box-solid">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Collapsible Accordion</h3>
+                        <h3 class="box-title">Daftar Beasiswa</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -145,7 +145,7 @@
                                                         <td> <?php echo $dtFinished->jenis_beasiswa; ?> </td>
                                                         <td> 
                                                             <button type="button" class="btn btn-small btn-default" title="Detail Beasiswa" onclick="detailB(<?php echo '\''.$dtFinished->id_beasiswa.'\',\''.$dtFinished->periode.'\'';?>)">Detail Beasiswa</button>
-                                                            <button type="button" class="btn btn-small btn-default" title="Penerima Beasiswa" onclick="detailB(<?php echo '\''.$dtFinished->id_beasiswa.'\',\''.$dtFinished->periode.'\'';?>)">Penerima Beasiswa</button>
+                                                            <button type="button" class="btn btn-small btn-default" title="Penerima Beasiswa" onclick="penerimaB(<?php echo '\''.$dtFinished->id_beasiswa.'\',\''.$dtFinished->periode.'\'';?>)">Penerima Beasiswa</button>
                                                         </td>
                                                     </tr>
                                                 <?php
@@ -188,6 +188,22 @@
                 per: per
             },
             url: "<?php echo base_url('mahasiswa/beasiswa/view');?>/",
+            success: function(data){
+                $('#modalData').html(data);
+                $('#viewModal').modal('show');
+            }
+        });   
+    }
+    
+    function penerimaB(idB,per){
+        $("#modalData").html("<div class='col-md-6'><i class='fa fa-refresh fa-spin'></i></div>");
+        $.ajax({
+            type: "POST",
+            data: {
+                idB: idB,
+                per: per
+            },
+            url: "<?php echo base_url('admin/penerima/viewPenerima');?>/",
             success: function(data){
                 $('#modalData').html(data);
                 $('#viewModal').modal('show');

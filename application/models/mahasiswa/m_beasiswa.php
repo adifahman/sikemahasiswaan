@@ -21,7 +21,7 @@
                 }
                 return $hasil;
             }else{
-                echo 'someting wong';
+                echo 'Something Wrong';
             }
         }
         
@@ -37,7 +37,7 @@
                 }
                 return $hasil;
             }else{
-                echo 'someting wong';
+                echo 'Something Wrong';
             }
         }
         
@@ -53,7 +53,7 @@
                 }
                 return $hasil;
             }else{
-                echo 'someting wong';
+                echo 'Something Wrong';
             }
         }
         
@@ -75,7 +75,7 @@
                 }
                 return $hasil;
             }else{
-                echo 'someting wong';
+                echo 'Something Wrong';
             }
         }
     }

@@ -11,7 +11,7 @@
         }
 
         function index(){
-            $data['title']              = "Beasiswa | Sistem Informasi Kemahasiswaan";
+            $data['title']              = "Beasiswa | Sistem Informasi Beasiswa";
             $data['page']               = 'bsw';
             
             $table['dataAvailable']     = $this->m_beasiswa->dataAvailable();

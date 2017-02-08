@@ -18,7 +18,7 @@
     <script src="<?php echo base_url('assets'); ?>/plugins/jQuery/jquery-2.2.3.min.js"></script>
 </head>
 
-<body class="hold-transition fixed skin-blue sidebar-mini">
+<body class="hold-transition fixed skin-blue sidebar-mini <?php if($this->session->userdata('logged_in') == null){echo 'sidebar-collapse';} ?>">
     <div class="wrapper">
         <header class="main-header">
             <!-- Logo -->
@@ -32,7 +32,6 @@
 
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
-
                 <!-- Sidebar toggle button-->
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                     <span class="sr-only">Toggle navigation</span>
@@ -41,7 +40,11 @@
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="logout"><i class="fa fa-sign-out"></i>Sign Out</a>
+                            <?php if($this->session->userdata('logged_in') != null){?>
+                                <a href="mahasiswa/logout"><i class="fa fa-sign-out"></i> Sign Out</a>
+                            <?php }else{ ?>
+                                <a href="mahasiswa/logout"><i class="fa fa-sign-in"></i> Sign In</a>
+                            <?php }?>
                         </li>
                     </ul>
                 </div>

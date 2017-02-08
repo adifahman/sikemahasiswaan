@@ -12,7 +12,7 @@ class Profile extends MX_Controller{
     }
 
     function index(){
-        $data['title']      = "Profil Perusahaan";
+        $data['title']      = "Profil Perusahaan | Admin - Sistem Informasi Beasiswa";
         $data['page']       = 'prf';
         $table['dataTable']  = $this->m_profile->data()->result();
         

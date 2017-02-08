@@ -10,7 +10,7 @@
         }
 
         function index(){
-            $data['title']      = "Dashboard";
+            $data['title']      = "Dashboard | Admin - Sistem Informasi Beasiswa";
             $data['page']       = 'adm';
 
             $this->load->view('v_header', $data);

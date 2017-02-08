@@ -11,7 +11,7 @@ class Beasiswa extends MX_Controller{
     }
 
     function index(){
-        $data['title']      = "Detail Beasiswa";
+        $data['title']      = "Beasiswa | Admin - Sistem Informasi Beasiswa";
         $data['page']       = 'bsw';
         $data['list']       = $this->getList();
         if($this->session->userdata("updated")==1){

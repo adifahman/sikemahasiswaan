@@ -8,13 +8,14 @@
         function checkLogin(){
             $check['username'] = $this->input->post('username');
             $check['password'] = md5($this->input->post('password'));
-            $q_check_login = $this->db->get_where('m_user', $check);
-            if(count($q_check_login->result()) > 0){
-                foreach($q_check_login->result() as $qad){
-                    $sess_data['logged_in'] = 'admin';
-                    $sess_data['username']  = $qad->username;
-                    $sess_data['name']      = $qad->name;
-                    $sess_data['privilege'] = $qad->privilege;
+            
+            $login = $this->db->get_where('m_user', $check);
+            if(count($login->result()) > 0){
+                foreach($login->result() as $inf){
+                    $sess_data['logged_in']     = 'admin';
+                    $sess_data['username']      = $inf->username;
+                    $sess_data['name']          = $inf->name;
+                    $sess_data['privilege']     = $inf->privilege;
                     $this->session->set_userdata($sess_data);
                 }
                 redirect("admin");

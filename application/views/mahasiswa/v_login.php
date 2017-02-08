@@ -27,7 +27,7 @@
             } ?>
             <form action="<?php echo base_url('mahasiswa/login/act'); ?>" method="post">
                 <div class="form-group has-feedback">
-                    <input type="username" name="username" class="form-control" placeholder="Username" required="true" autocomplete="off" autofocus="true">
+                    <input type="username" name="username" class="form-control" placeholder="NPM" required="true" autocomplete="off" autofocus="true" style="text-transform:uppercase">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">

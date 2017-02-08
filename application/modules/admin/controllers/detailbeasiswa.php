@@ -11,7 +11,7 @@ class Detailbeasiswa extends MX_Controller{
     }
 
     function index(){
-        $data['title']      = "Detail Beasiswa";
+        $data['title']      = "Detail Beasiswa | Admin - Sistem Informasi Beasiswa";
         $data['page']       = 'dbs';
         $data['list']       = $this->getList();
         

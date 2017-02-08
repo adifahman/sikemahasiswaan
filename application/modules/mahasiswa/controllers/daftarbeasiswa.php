@@ -12,7 +12,7 @@
         }
 
         function index(){
-            $data['title']              = "Daftar Beasiswa | Sistem Informasi Kemahasiswaan";
+            $data['title']              = "Registrasi Beasiswa | Sistem Informasi Beasiswa";
             $data['page']               = 'dft';
             $data['list']               = $this->getList();
 
