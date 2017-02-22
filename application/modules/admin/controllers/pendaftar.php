@@ -45,7 +45,7 @@
                 
         function pdf(){
  
-            $filename = "_order.pdf";
+            $filename = "test.pdf";
             $data['title']      = "Pendaftar";
             $data['page']       = 'dft';
             $data['list']       = $this->getList();

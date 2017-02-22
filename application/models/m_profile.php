@@ -72,4 +72,16 @@
             redirect('admin/profile');
             return;
         }
+        
+        function pdfPemberi(){
+            $ambildata = $this->db->get('bsw_profil');
+            if ($ambildata->num_rows() > 0){
+                foreach ($ambildata->result() as $data) {
+                    $hasil[] = $data;
+                }
+                return $hasil;
+            }else{
+                echo 'someting wong';
+            }
+        }
     }

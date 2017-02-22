@@ -19,10 +19,33 @@
             $idB = $this->input->post('idB');
             $per = $this->input->post('per');
             
-            $this->db->select('id_beasiswa, periode, id_pendaftar, npm, nama, jurusan, file');
-            $this->db->from('bsw_pendaftar');
-            $this->db->where('id_beasiswa',$idB);
-            $this->db->where('periode',$per);
+            $this->db->select('p.id_pendaftar, d.id_beasiswa, d.periode, d.npm, d.nama, d.jurusan');
+            $this->db->from('bsw_penerima p');
+            $this->db->join('bsw_pendaftar d', 'p.id_pendaftar = d.id_pendaftar');
+            $this->db->where('p.id_beasiswa',$idB);
+            $this->db->where('p.periode',$per);
+            
+            $ambildata = $this->db->get();
+            if ($ambildata->num_rows() > 0){
+                foreach ($ambildata->result() as $data) {
+                    $hasil[] = $data;
+                }
+                return $hasil;
+            }else{
+                echo 'someting wong';
+            }
+        }
+        
+        function pdfPenerima(){
+            $idB = $this->input->post('idB');
+            $per = $this->input->post('per');
+            
+            $this->db->select('p.id_pendaftar, b.nama_beasiswa, d.id_beasiswa, d.periode, d.npm, d.nama, d.jurusan');
+            $this->db->from('bsw_pendaftar d');
+            $this->db->join('bsw_penerima p', 'd.id_pendaftar = p.id_pendaftar');
+            $this->db->join('bsw_beasiswa b', 'd.id_beasiswa = b.id_beasiswa');
+            $this->db->where('p.id_beasiswa',$idB);
+            $this->db->where('p.periode',$per);
             
             $ambildata = $this->db->get();
             if ($ambildata->num_rows() > 0){

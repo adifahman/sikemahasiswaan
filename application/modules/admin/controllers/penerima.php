@@ -36,4 +36,21 @@
         
             $this->load->view('ajax/a_viewPenerima',$data);
         }
+        
+        function pdf(){
+            $data['dataTable']  = $this->m_penerima->pdfPenerima();
+            $filename           = "penerimabeasiswa.pdf";
+            $data['title']      = "Penerima Beasiswa";
+            $data['page']       = 'dft';
+            $data['list']       = $this->getList();
+            $html = $this->load->view('print/p_viewPenerima',$data,true);
+
+            $this->load->library('m_pdf');
+
+            $this->m_pdf->pdf->WriteHTML($html);
+
+            //download it D save F.
+            $this->m_pdf->pdf->Output("./assets/uploads/".$filename, "I");
+            
+        }
     }

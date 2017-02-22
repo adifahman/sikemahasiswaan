@@ -44,4 +44,20 @@ class Profile extends MX_Controller{
     function delete($id){
         $this->m_profile->delete($id);
     }
+    
+    function pdf(){
+        $data['dataTable']  = $this->m_profile->pdfPemberi();
+        $filename           = "pemberibeasiswa.pdf";
+        $data['title']      = "Pemberi Beasiswa";
+        $data['page']       = 'dft';
+        $html = $this->load->view('print/p_viewPemberi',$data,true);
+
+        $this->load->library('m_pdf');
+        $mpdf = new mPDF('c', 'A4-L'); 
+        $mpdf->WriteHTML($html);
+
+        //download it D save F.
+        $mpdf->Output("./assets/uploads/".$filename, "I");
+
+    }
 }

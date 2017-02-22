@@ -25,7 +25,11 @@
                         </div>
                         <div class="box-body">
                             <label for="iID"><button type="button" class="btn btn-primary margin" data-toggle="modal" data-target="#insertModal" data-whatever="@mdo" onclick="getID()">Tambah Data</button></label>
-
+                            <a href="<?php echo base_url('admin/profile/pdf');?>" target="_blank">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-download"></i> Generate PDF
+                                </button>
+                            </a>
                             <table id="viewTable" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
